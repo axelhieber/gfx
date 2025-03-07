@@ -82,13 +82,25 @@
                 let sum = alpha + beta + gamma;
                 if (sum !== 1) {
                     if (changed === "alpha") {
-                        beta = Math.max(0, Math.min(1, beta / sum));
+                        if(beta+alpha>1){
+                            beta = Math.max(0, Math.min(1, 1-alpha));
+                        }else{
+                            beta = Math.max(0, Math.min(1, beta));
+                        }
                         gamma = Math.max(0, Math.min(1, 1 - alpha - beta));
                     } else if (changed === "beta") {
-                        alpha = Math.max(0, Math.min(1, alpha / sum));
+                        if(beta+alpha>1){
+                            alpha = Math.max(0, Math.min(1, 1-beta));
+                        }else{
+                            alpha = Math.max(0, Math.min(1, alpha));
+                        }
                         gamma = Math.max(0, Math.min(1, 1 - alpha - beta));
                     } else {
-                        alpha = Math.max(0, Math.min(1, alpha / sum));
+                        if(gamma+alpha>1){
+                            alpha = Math.max(0, Math.min(1, 1-gamma));
+                        }else{
+                            alpha = Math.max(0, Math.min(1, alpha));
+                        }
                         beta = Math.max(0, Math.min(1, 1 - alpha - gamma));
                     }
                 }

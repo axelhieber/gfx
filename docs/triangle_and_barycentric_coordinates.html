@@ -82,7 +82,7 @@
                 let sum = alpha + beta + gamma;
                 if (sum !== 1) {
                     if (changed === "alpha") {
-                        if(beta+alpha>1){
+                        if(alpha+gamma>1){
                             gamma = Math.max(0, Math.min(1, 1-alpha));
                         }else{
                             gamma = Math.max(0, Math.min(1, gamma));

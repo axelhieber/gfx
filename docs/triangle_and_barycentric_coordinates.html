@@ -96,12 +96,12 @@
                         }
                         gamma = Math.max(0, Math.min(1, 1 - alpha - beta));
                     } else {
-                        if(gamma+alpha>1){
-                            alpha = Math.max(0, Math.min(1, 1-gamma));
+                        if(gamma+beta>1){
+                            beta = Math.max(0, Math.min(1, 1-gamma));
                         }else{
-                            alpha = Math.max(0, Math.min(1, alpha));
+                            beta = Math.max(0, Math.min(1, beta));
                         }
-                        beta = Math.max(0, Math.min(1, 1 - alpha - gamma));
+                        alpha = Math.max(0, Math.min(1, 1 - beta - gamma));
                     }
                 }
                 document.getElementById("alpha").value = alpha.toFixed(2);
